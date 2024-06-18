@@ -3,20 +3,28 @@
 set -e
 
 # The basics, update and install stuff from package manager
-apt-get update
-apt-get upgrade -y
-cat install_by_pkg_mgr.txt | xargs apt-get install -y
+sudo apt-get update
+sudo apt-get upgrade -y
+cat install_by_pkg_mgr.txt | xargs sudo apt-get install -y
 
 # neovim
-curl -o- https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
-mv nvim-linux64/bin/nvim /usr/bin/nvim
-rm -rf nvim-linux64
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
 rm nvim-linux64.tar.gz
+echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.bashrc
 
 # npm and node.js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install node
 
 # rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rustup.sh
+chmod +x rustup.sh
+./rustup.sh -y
+rm rustup.sh
+
+cargo install --locked zellij

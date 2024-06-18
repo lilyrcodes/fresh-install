@@ -2,4 +2,4 @@ curl
 gcc
 git
 python3
-tmux
+stow
