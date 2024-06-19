@@ -47,6 +47,6 @@ echo
 
 read -p "Please add it by navigating to https://github.com/settings/ssh/new then press enter to continue..." unused_var
 
-git clone git@github.com:lilyrcodes/dotfiles.git ~/
-git clone git@github.com:lilyrcodes/zellij.git ~/.config/
-git clone git@github.com:lilyrcodes/nvim.git ~/.config/
+git clone git@github.com:lilyrcodes/dotfiles.git ~/dotfiles
+git clone git@github.com:lilyrcodes/zellij.git ~/.config/zellij
+git clone git@github.com:lilyrcodes/kickstart.nvim.git ~/.config/nvim
