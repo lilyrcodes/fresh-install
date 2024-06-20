@@ -36,17 +36,8 @@ sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.22.4.linux-amd64.ta
 rm go1.22.4.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 
-ssh-keygen -t ed25519 -C "$1"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-echo "Here's your public SSH key for github:"
-echo
-cat ~/.ssh/id_ed25519.pub
-echo
-echo
-
-read -p "Please add it by navigating to https://github.com/settings/ssh/new then press enter to continue..." unused_var
-
 git clone git@github.com:lilyrcodes/dotfiles.git ~/dotfiles
 git clone git@github.com:lilyrcodes/zellij.git ~/.config/zellij
 git clone git@github.com:lilyrcodes/kickstart.nvim.git ~/.config/nvim
+
+echo "Please follow the steps in https://github.com/lilyrcodes/dotfiles?tab=readme-ov-file#easy-setup to complete dotfiles setup."
