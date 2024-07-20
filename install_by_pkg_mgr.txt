@@ -2,4 +2,5 @@ curl
 gcc
 git
 python3
+simplescreenrecorder
 stow
