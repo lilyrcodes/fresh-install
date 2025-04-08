@@ -22,7 +22,7 @@ nvm install node
 . "$HOME/.cargo/env"
 
 # zellij
-cargo install --locked zellij
+cargo install zellij
 
 # go
 ./go.sh
