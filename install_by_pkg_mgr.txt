@@ -5,3 +5,4 @@ graphviz
 python3
 simplescreenrecorder
 stow
+xclip
