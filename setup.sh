@@ -24,6 +24,9 @@ nvm install node
 # zellij
 cargo install zellij
 
+# tree-sitter
+cargo install tree-sitter-cli
+
 # go
 ./go.sh
 export PATH=$PATH:/usr/local/go/bin
