@@ -6,4 +6,5 @@ graphviz
 python3
 simplescreenrecorder
 stow
+texlive-full
 xclip
