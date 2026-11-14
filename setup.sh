@@ -31,6 +31,9 @@ cargo install tree-sitter-cli
 ./go.sh
 export PATH=$PATH:/usr/local/go/bin
 
+# uv
+./uv.sh
+
 git clone git@github.com:lilyrcodes/dotfiles.git ~/dotfiles
 git clone git@github.com:lilyrcodes/zellij.git ~/.config/zellij
 git clone git@github.com:lilyrcodes/kickstart.nvim.git ~/.config/nvim

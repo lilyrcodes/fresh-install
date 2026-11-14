@@ -3,6 +3,7 @@ curl
 gcc
 git
 graphviz
+pandoc
 python3
 simplescreenrecorder
 stow
